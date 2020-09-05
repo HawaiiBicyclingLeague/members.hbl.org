@@ -4,12 +4,15 @@
 extern crate rocket;
 
 use rocket::Response;
+use rocket_contrib::templates::Template;
+use std::collections::HashMap;
 
 #[get("/")]
-fn index() -> &'static str {
-    "hello, world."
+fn index() -> Template {
+    let context: HashMap<&str, &str> = HashMap::new();
+    Template::render("registration", &context)
 }
 
 fn main() {
-    rocket::ignite().mount("/", routes![index]).launch();
+    rocket::ignite().mount("/", routes![index]).attach(Template::fairing()).launch();
 }
