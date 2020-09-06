@@ -1,3 +1,60 @@
+<!DOCTYPE html>
 <html lang="en">
-    hello, world.
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Member Registration</title>
+    <link rel="stylesheet" href="/public/css/bulma.css">
+</head>
+<body>
+<section class="section">
+    <div class="container">
+        <h1 class="title">
+            Member Registration
+        </h1>
+
+        <form>
+            <div class="field">
+                <label class="label" for="firstName">First Name</label>
+                <div class="control">
+                    <input class="input" id="firstName" type="text" placeholder="First Name">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="lastName">Last Name</label>
+                <div class="control">
+                    <input class="input" id="lastName" type="text" placeholder="Last Name">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="email">Email Address</label>
+                <div class="control">
+                    <input class="input" id="email" type="email" placeholder="Email Address">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="password">Password</label>
+                <div class="control">
+                    <input class="input" id="password" type="password" placeholder="Password">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="passwordRepeat">Repeat Password</label>
+                <div class="control">
+                    <input class="input" id="passwordRepeat" type="password" placeholder="Repeat Password">
+                </div>
+            </div>
+
+            <label class="checkbox">
+                <input type="checkbox">
+                I agree to the <a href="#">terms and conditions</a>
+            </label>
+        </form>
+    </div>
+</section>
+</body>
 </html>
