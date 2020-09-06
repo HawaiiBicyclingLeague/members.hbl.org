@@ -6,6 +6,7 @@ extern crate rocket;
 use rocket::Response;
 use rocket_contrib::templates::Template;
 use std::collections::HashMap;
+use rocket_contrib::serve::StaticFiles;
 
 #[get("/")]
 fn index() -> Template {
@@ -14,5 +15,9 @@ fn index() -> Template {
 }
 
 fn main() {
-    rocket::ignite().mount("/", routes![index]).attach(Template::fairing()).launch();
+    rocket::ignite()
+        .mount("/", routes![index])
+        .mount("/public", StaticFiles::from("/static"))
+        .attach(Template::fairing())
+        .launch();
 }
